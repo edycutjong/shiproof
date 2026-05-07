@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { sagaPadService } from "@/lib/sagapad";
 
-// Mock Webhook Data
-const MOCK_WEBHOOKS = [
+// Sample webhook events
+const SAMPLE_WEBHOOKS = [
   {
     id: "wh_1",
     repo: "user/shiproof-core",
@@ -24,7 +24,7 @@ const MOCK_WEBHOOKS = [
 ];
 
 export default function ShiproofDashboard() {
-  const [logs, setLogs] = useState<typeof MOCK_WEBHOOKS>(MOCK_WEBHOOKS);
+  const [logs, setLogs] = useState<typeof SAMPLE_WEBHOOKS>(SAMPLE_WEBHOOKS);
   const [isListening, setIsListening] = useState(true);
 
   const simulateIncomingCommit = async () => {
