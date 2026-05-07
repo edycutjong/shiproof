@@ -1,5 +1,8 @@
 "use client";
 
+import { StatusBar } from "@/components/StatusBar";
+import { Footer } from "@/components/Footer";
+
 import { useState } from "react";
 import { sagaPadService } from "@/lib/sagapad";
 
@@ -54,6 +57,8 @@ export default function ShiproofDashboard() {
   };
 
   return (
+    <>
+      <StatusBar />
     <div className="min-h-screen p-8 max-w-5xl mx-auto space-y-8">
       <header className="flex justify-between items-center pb-6 border-b border-brand-border">
         <div>
@@ -174,5 +179,7 @@ export default function ShiproofDashboard() {
         </aside>
       </main>
     </div>
+      <Footer />
+    </>
   );
 }
