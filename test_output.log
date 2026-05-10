@@ -1,0 +1,235 @@
+
+> shiproof@0.1.0 ci
+> npm run lint && npm run typecheck && npm run test:coverage
+
+
+> shiproof@0.1.0 lint
+> eslint .
+
+
+/Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/app/api/webhook/github/route.ts
+  36:12  warning  '_err' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/app/page.tsx
+  104:31  warning  'i' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/components/TerminalLog.tsx
+  45:10  warning  'streamIndex' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/lib/sagapad.ts
+  52:14  warning  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 4 problems (0 errors, 4 warnings)
+
+
+> shiproof@0.1.0 typecheck
+> tsc --noEmit
+
+
+> shiproof@0.1.0 test:coverage
+> vitest run --coverage
+
+
+ RUN  v4.1.5 /Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad
+      Coverage enabled with v8
+
+ ❯ src/__tests__/lib/sagapad.test.ts (0 test)
+ ❯ src/__tests__/api/ships.test.ts (0 test)
+ ❯ src/__tests__/api/webhook.test.ts (0 test)
+ ❯ src/__tests__/api/manifest.test.ts (0 test)
+ ❯ src/__tests__/api/health.test.ts (0 test)
+ ❯ src/__tests__/components/TerminalLog.test.tsx (0 test)
+ ❯ src/__tests__/components/ScrambleText.test.tsx (0 test)
+ ❯ src/__tests__/components/AnimatedCounter.test.tsx (0 test)
+ ❯ src/__tests__/components/StatusBar.test.tsx (0 test)
+ ❯ src/__tests__/components/Footer.test.tsx (0 test)
+ ❯ src/__tests__/components/FlowDiagram.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 11 ⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/__tests__/api/health.test.ts [ src/__tests__/api/health.test.ts ]
+Error: Cannot find package '@/app/api/health/route' imported from /Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/api/health.test.ts
+ ❯ src/__tests__/api/health.test.ts:13:1
+     11| }));
+     12|
+     13| import { GET } from '@/app/api/health/route';
+       | ^
+     14|
+     15| describe('GET /api/health', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/11]⎯
+
+ FAIL  src/__tests__/api/manifest.test.ts [ src/__tests__/api/manifest.test.ts ]
+Error: Cannot find package '@/app/api/skill/manifest/route' imported from /Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/api/manifest.test.ts
+ ❯ src/__tests__/api/manifest.test.ts:13:1
+     11| }));
+     12|
+     13| import { GET } from '@/app/api/skill/manifest/route';
+       | ^
+     14|
+     15| describe('GET /api/skill/manifest', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/11]⎯
+
+ FAIL  src/__tests__/api/ships.test.ts [ src/__tests__/api/ships.test.ts ]
+Error: Cannot find package '@/app/api/ships/route' imported from /Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/api/ships.test.ts
+ ❯ src/__tests__/api/ships.test.ts:13:1
+     11| }));
+     12|
+     13| import { GET } from '@/app/api/ships/route';
+       | ^
+     14|
+     15| interface Ship {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/11]⎯
+
+ FAIL  src/__tests__/api/webhook.test.ts [ src/__tests__/api/webhook.test.ts ]
+Error: Cannot find package '@/app/api/webhook/github/route' imported from /Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/api/webhook.test.ts
+ ❯ src/__tests__/api/webhook.test.ts:19:1
+     17| }));
+     18|
+     19| import { POST, GET } from '@/app/api/webhook/github/route';
+       | ^
+     20| import { sagaPadService } from '@/lib/sagapad';
+     21|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/11]⎯
+
+ FAIL  src/__tests__/lib/sagapad.test.ts [ src/__tests__/lib/sagapad.test.ts ]
+Error: Cannot find package '@/lib/sagapad' imported from /Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/lib/sagapad.test.ts
+ ❯ src/__tests__/lib/sagapad.test.ts:3:1
+      1| // @vitest-environment node
+      2| import { describe, it, expect, vi, beforeEach, afterEach } from 'vites…
+      3| import { SagaPadService } from '@/lib/sagapad';
+       | ^
+      4|
+      5| describe('SagaPadService', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/11]⎯
+
+ FAIL  src/__tests__/components/AnimatedCounter.test.tsx [ src/__tests__/components/AnimatedCounter.test.tsx ]
+Error: Failed to resolve import "@/components/AnimatedCounter" from "src/__tests__/components/AnimatedCounter.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/components/AnimatedCounter.test.tsx:3:32
+  1  |  import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+  2  |  import { render, screen, act } from "@testing-library/react";
+  3  |  import { AnimatedCounter } from "@/components/AnimatedCounter";
+     |                                   ^
+  4  |  var _jsxFileName = "/Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/components/AnimatedCounte...
+  5  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/node.js:30390:39
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/node.js:30387:14
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/node.js:27651:18
+ ❯ node_modules/vite/dist/node/chunks/node.js:27714:30
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/node.js:27682:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/node.js:30179:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/node.js:24509:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/11]⎯
+
+ FAIL  src/__tests__/components/FlowDiagram.test.tsx [ src/__tests__/components/FlowDiagram.test.tsx ]
+Error: Failed to resolve import "@/components/FlowDiagram" from "src/__tests__/components/FlowDiagram.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/components/FlowDiagram.test.tsx:3:28
+  1  |  import { describe, it, expect, vi, afterEach } from "vitest";
+  2  |  import { render, screen, act } from "@testing-library/react";
+  3  |  import { FlowDiagram } from "@/components/FlowDiagram";
+     |                               ^
+  4  |  var _jsxFileName = "/Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/components/FlowDiagram.te...
+  5  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/node.js:30390:39
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/node.js:30387:14
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/node.js:27651:18
+ ❯ node_modules/vite/dist/node/chunks/node.js:27714:30
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/node.js:27682:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/node.js:30179:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/node.js:24509:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/11]⎯
+
+ FAIL  src/__tests__/components/Footer.test.tsx [ src/__tests__/components/Footer.test.tsx ]
+Error: Failed to resolve import "@/components/Footer" from "src/__tests__/components/Footer.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/components/Footer.test.tsx:3:23
+  1  |  import { describe, it, expect } from "vitest";
+  2  |  import { render, screen } from "@testing-library/react";
+  3  |  import { Footer } from "@/components/Footer";
+     |                          ^
+  4  |  var _jsxFileName = "/Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/components/Footer.test.tsx";
+  5  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/node.js:30390:39
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/node.js:30387:14
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/node.js:27651:18
+ ❯ node_modules/vite/dist/node/chunks/node.js:27714:30
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/node.js:27682:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/node.js:30179:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/node.js:24509:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/11]⎯
+
+ FAIL  src/__tests__/components/ScrambleText.test.tsx [ src/__tests__/components/ScrambleText.test.tsx ]
+Error: Failed to resolve import "@/components/ScrambleText" from "src/__tests__/components/ScrambleText.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/components/ScrambleText.test.tsx:3:29
+  1  |  import { describe, it, expect, vi, afterEach } from "vitest";
+  2  |  import { render, screen, act } from "@testing-library/react";
+  3  |  import { ScrambleText } from "@/components/ScrambleText";
+     |                                ^
+  4  |  var _jsxFileName = "/Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/components/ScrambleText.t...
+  5  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/node.js:30390:39
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/node.js:30387:14
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/node.js:27651:18
+ ❯ node_modules/vite/dist/node/chunks/node.js:27714:30
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/node.js:27682:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/node.js:30179:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/node.js:24509:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/11]⎯
+
+ FAIL  src/__tests__/components/StatusBar.test.tsx [ src/__tests__/components/StatusBar.test.tsx ]
+Error: Failed to resolve import "@/components/StatusBar" from "src/__tests__/components/StatusBar.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/components/StatusBar.test.tsx:3:26
+  1  |  import { describe, it, expect, vi, afterEach } from "vitest";
+  2  |  import { render, screen } from "@testing-library/react";
+  3  |  import { StatusBar } from "@/components/StatusBar";
+     |                             ^
+  4  |  var _jsxFileName = "/Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/components/StatusBar.test...
+  5  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/node.js:30390:39
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/node.js:30387:14
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/node.js:27651:18
+ ❯ node_modules/vite/dist/node/chunks/node.js:27714:30
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/node.js:27682:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/node.js:30179:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/node.js:24509:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/11]⎯
+
+ FAIL  src/__tests__/components/TerminalLog.test.tsx [ src/__tests__/components/TerminalLog.test.tsx ]
+Error: Failed to resolve import "@/components/TerminalLog" from "src/__tests__/components/TerminalLog.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/components/TerminalLog.test.tsx:3:28
+  1  |  import { describe, it, expect, vi, afterEach } from "vitest";
+  2  |  import { render, screen, act } from "@testing-library/react";
+  3  |  import { TerminalLog } from "@/components/TerminalLog";
+     |                               ^
+  4  |  var _jsxFileName = "/Users/edycu/Projects/Hackathon/Frontier/frontier-sagapad/src/__tests__/components/TerminalLog.te...
+  5  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/node.js:30390:39
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/node.js:30387:14
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/node.js:27651:18
+ ❯ node_modules/vite/dist/node/chunks/node.js:27714:30
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/node.js:27682:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/node.js:30179:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/node.js:24509:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/11]⎯
+
+
+ Test Files  11 failed (11)
+      Tests  no tests
+   Start at  08:01:40
+   Duration  1.21s (transform 363ms, setup 0ms, import 0ms, tests 0ms, environment 4.47s)
+
