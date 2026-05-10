@@ -15,6 +15,22 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Shiproof | Proof of Ship Automator",
   description: "GitHub webhook to SagaPad skill to X post auto-drafter.",
+  icons: {
+    icon: "/icon.svg",
+    apple: "/icon.svg",
+  },
+  openGraph: {
+    title: "Shiproof | Proof of Ship Automator",
+    description: "GitHub webhook to SagaPad skill to X post auto-drafter.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Shiproof",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
