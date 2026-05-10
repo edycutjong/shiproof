@@ -5,10 +5,10 @@
   
   <br/>
   
-  [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://shiproof.edycu.dev)
-  [![Pitch Deck](https://img.shields.io/badge/Pitch-Deck-f59e0b.svg)](https://shiproof.edycu.dev/pitch)
-  [![Pitch Video](https://img.shields.io/badge/Pitch-Video-red.svg)](https://youtube.com/your-video)
-  [![Superteam Earn](https://img.shields.io/badge/Superteam-Earn_Listing-blue.svg)](https://superteam.fun/earn/listing/sagapad-or-build-agentic-skills-that-helps-colosseum-projects-and-founders-win-on-x)
+  [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg?style=for-the-badge)](https://shiproof.edycu.dev)
+  [![Pitch Deck](https://img.shields.io/badge/Pitch-Deck-f59e0b.svg?style=for-the-badge)](https://shiproof.edycu.dev/pitch)
+  [![Pitch Video](https://img.shields.io/badge/Pitch-Video-red.svg?style=for-the-badge)](https://youtube.com/your-video)
+  [![Superteam Earn](https://img.shields.io/badge/Superteam-Earn_Listing-blue.svg?style=for-the-badge)](https://superteam.fun/earn/listing/sagapad-or-build-agentic-skills-that-helps-colosseum-projects-and-founders-win-on-x)
 
   <br/>
 
@@ -16,7 +16,7 @@
   ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
   ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
   ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
-  ![Vitest](https://img.shields.io/badge/Vitest-FCC72B?style=flat&logo=vitest&logoColor=white)
+  [![Shiproof CI](https://github.com/edycutjong/shiproof/actions/workflows/ci.yml/badge.svg)](https://github.com/edycutjong/shiproof/actions/workflows/ci.yml)
 </div>
 
 ---
