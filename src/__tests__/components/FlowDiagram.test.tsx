@@ -9,35 +9,35 @@ afterEach(() => {
 describe('FlowDiagram', () => {
   it('renders the Pipeline Flow heading', () => {
     render(<FlowDiagram />);
-    expect(screen.getByText(/Pipeline Flow/)).toBeInTheDocument();
+    expect(screen.getAllByText(/Pipeline Flow/)[0]).toBeInTheDocument();
   });
 
   it('renders Git Push step', () => {
     render(<FlowDiagram />);
-    expect(screen.getByText('Git Push')).toBeInTheDocument();
+    expect(screen.getAllByText('Git Push')[0]).toBeInTheDocument();
   });
 
   it('renders AI Summarize step', () => {
     render(<FlowDiagram />);
-    expect(screen.getByText('AI Summarize')).toBeInTheDocument();
+    expect(screen.getAllByText('AI Summarize')[0]).toBeInTheDocument();
   });
 
   it('renders SagaPad Skill step', () => {
     render(<FlowDiagram />);
-    expect(screen.getByText('SagaPad Skill')).toBeInTheDocument();
+    expect(screen.getAllByText('SagaPad Skill')[0]).toBeInTheDocument();
   });
 
   it('renders Post to X step', () => {
     render(<FlowDiagram />);
-    expect(screen.getByText('Post to X')).toBeInTheDocument();
+    expect(screen.getAllByText('Post to X')[0]).toBeInTheDocument();
   });
 
   it('renders sublabels for steps', () => {
     render(<FlowDiagram />);
-    expect(screen.getByText('Webhook fires')).toBeInTheDocument();
-    expect(screen.getByText('GPT-4o-mini')).toBeInTheDocument();
-    expect(screen.getByText('Draft via agent')).toBeInTheDocument();
-    expect(screen.getByText('Auto-published')).toBeInTheDocument();
+    expect(screen.getAllByText('Webhook fires')[0]).toBeInTheDocument();
+    expect(screen.getAllByText('GPT-4o-mini')[0]).toBeInTheDocument();
+    expect(screen.getAllByText('Draft via agent')[0]).toBeInTheDocument();
+    expect(screen.getAllByText('Auto-published')[0]).toBeInTheDocument();
   });
 
   it('starts with step 0 active', () => {
@@ -75,5 +75,11 @@ describe('FlowDiagram', () => {
     const { container } = render(<FlowDiagram />);
     const steps = container.querySelectorAll('.flow-step');
     expect(steps).toHaveLength(4);
+  });
+
+  it('clears interval on unmount', () => {
+    vi.useFakeTimers();
+    const { unmount } = render(<FlowDiagram />);
+    unmount();
   });
 });

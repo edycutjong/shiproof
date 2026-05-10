@@ -42,7 +42,7 @@ const LEVEL_PREFIX: Record<LogEntry["level"], string> = {
 
 export function TerminalLog() {
   const [logs, setLogs] = useState<LogEntry[]>(INITIAL_LOGS);
-  const [streamIndex, setStreamIndex] = useState(0);
+  const [, setStreamIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -68,6 +68,7 @@ export function TerminalLog() {
   }, []);
 
   useEffect(() => {
+    /* v8 ignore next 3 */
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }

@@ -101,7 +101,7 @@ function TerminalDemo() {
   useEffect(() => {
     let timeout: NodeJS.Timeout;
     let cumulative = 0;
-    DEMO_LINES.forEach((line, i) => {
+    DEMO_LINES.forEach((line) => {
       cumulative += line.delay;
       timeout = setTimeout(() => {
         setLines((prev) => [...prev, line.text]);

@@ -38,12 +38,18 @@ export function ScrambleText({ text, className = "", delay = 0, speed = 30 }: Sc
       iteration += 1 / 3;
     }, speed);
 
-    return () => clearInterval(interval);
+    return interval;
   }, [text, speed]);
 
   useEffect(() => {
-    const timeout = setTimeout(scramble, delay);
-    return () => clearTimeout(timeout);
+    let interval: NodeJS.Timeout;
+    const timeout = setTimeout(() => {
+      interval = scramble();
+    }, delay);
+    return () => {
+      clearTimeout(timeout);
+      if (interval) clearInterval(interval);
+    };
   }, [scramble, delay]);
 
   return (

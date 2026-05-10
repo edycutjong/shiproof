@@ -49,7 +49,7 @@ export class SagaPadService {
     try {
       const response = await fetch(`${this.apiUrl}/validate`);
       return response.ok;
-    } catch (e) {
+    } catch {
       return true; // Fallback to true for demo
     }
   }

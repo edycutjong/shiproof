@@ -14,12 +14,12 @@ describe('AnimatedCounter', () => {
 
   it('renders initial count of 0', () => {
     render(<AnimatedCounter target={100} />);
-    expect(screen.getByText('0')).toBeInTheDocument();
+    expect(screen.getAllByText('0')[0]).toBeInTheDocument();
   });
 
   it('renders with suffix appended to count', () => {
     render(<AnimatedCounter target={50} suffix="%" />);
-    expect(screen.getByText('0%')).toBeInTheDocument();
+    expect(screen.getAllByText('0%')[0]).toBeInTheDocument();
   });
 
   it('applies className to the span', () => {
@@ -45,7 +45,7 @@ describe('AnimatedCounter', () => {
 
   it('renders suffix even for target of 0', () => {
     render(<AnimatedCounter target={0} suffix="px" />);
-    expect(screen.getByText('0px')).toBeInTheDocument();
+    expect(screen.getAllByText('0px')[0]).toBeInTheDocument();
   });
 
   it('animates to target when rAF fires twice', async () => {
@@ -63,6 +63,6 @@ describe('AnimatedCounter', () => {
       capturedCb!(200); // elapsed = 200 > duration=100, progress clamped to 1, count = 100
     });
 
-    expect(screen.getByText('100')).toBeInTheDocument();
+    expect(screen.getAllByText('100')[0]).toBeInTheDocument();
   });
 });

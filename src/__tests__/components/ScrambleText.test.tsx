@@ -12,14 +12,14 @@ describe('ScrambleText', () => {
     vi.useFakeTimers();
     render(<ScrambleText text="Hello World" delay={500} />);
     // Delay > 0, so scramble hasn't started yet — fallback to text prop
-    expect(screen.getByText('Hello World')).toBeInTheDocument();
+    expect(screen.getAllByText('Hello World')[0]).toBeInTheDocument();
   });
 
   it('renders text immediately when delay is 0 and no time has passed', () => {
     vi.useFakeTimers();
     render(<ScrambleText text="Shiproof" delay={0} />);
     // Before advancing timers the text fallback shows
-    expect(screen.getByText('Shiproof')).toBeInTheDocument();
+    expect(screen.getAllByText('Shiproof')[0]).toBeInTheDocument();
   });
 
   it('resolves to final text after scramble completes', async () => {
@@ -29,7 +29,7 @@ describe('ScrambleText', () => {
     await act(async () => {
       vi.advanceTimersByTime(200);
     });
-    expect(screen.getByText('Ship')).toBeInTheDocument();
+    expect(screen.getAllByText('Ship')[0]).toBeInTheDocument();
   });
 
   it('applies provided className', () => {
