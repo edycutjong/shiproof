@@ -123,7 +123,7 @@ function PipelineCard({ log }: { log: WebhookLog }) {
       <div className="flex justify-between items-start mb-4">
         <div className="font-mono flex-1 min-w-0">
           <div className="flex items-center gap-2 text-[10px] text-brand-muted mb-1.5">
-            <GitHubIcon className="w-3 h-3 text-brand-muted flex-shrink-0" />
+            <GitHubIcon className="w-3 h-3 text-brand-muted shrink-0" />
             <span className="truncate">{log.repo}</span>
             <span className="text-brand-border">•</span>
             <span className="text-brand-primary">{log.hash}</span>
@@ -167,7 +167,7 @@ function PipelineCard({ log }: { log: WebhookLog }) {
             <XIcon className="w-4 h-4" />
           </div>
           <div className="flex gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-primary/30 to-brand-accent/30 border border-brand-border flex-shrink-0 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-linear-to-br from-brand-primary/30 to-brand-accent/30 border border-brand-border shrink-0 flex items-center justify-center">
               <span className="text-xs font-bold text-brand-primary">🚢</span>
             </div>
             <div className="flex-1 min-w-0">
@@ -270,7 +270,7 @@ export default function ShiproofDashboard() {
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
               <ScrambleText
                 text="Shiproof"
-                className="neon-text bg-gradient-to-r from-white via-brand-glow to-brand-accent bg-clip-text text-transparent"
+                className="neon-text bg-linear-to-r from-white via-brand-glow to-brand-accent bg-clip-text text-transparent"
                 delay={200}
                 speed={40}
               />
@@ -429,7 +429,7 @@ export default function ShiproofDashboard() {
                     </span>
                   </div>
                   <div className="w-full h-1.5 rounded-full bg-brand-surface overflow-hidden">
-                    <div className="h-full rounded-full bg-gradient-to-r from-brand-primary to-brand-accent animate-shimmer w-3/4" />
+                    <div className="h-full rounded-full bg-linear-to-r from-brand-primary to-brand-accent animate-shimmer w-3/4" />
                   </div>
                   <div className="grid grid-cols-3 gap-3 mt-2">
                     <div className="text-center p-2 rounded-lg bg-brand-surface/50 border border-brand-border/30">
