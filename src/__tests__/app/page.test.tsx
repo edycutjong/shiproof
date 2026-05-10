@@ -21,7 +21,7 @@ describe('LandingPage', () => {
   });
 
   it('renders landing page correctly', () => {
-    const { container } = render(<LandingPage />);
+    render(<LandingPage />);
     expect(screen.getByTestId('particle-bg')).toBeDefined();
     expect(screen.getAllByTestId('scramble-text').length).toBe(2);
     expect(screen.getByText('Shiproof')).toBeDefined();

@@ -14,9 +14,9 @@ describe('ParticleBackground', () => {
       moveTo: vi.fn(),
       lineTo: vi.fn(),
       stroke: vi.fn(),
-    } as any);
+    } as unknown as CanvasRenderingContext2D);
 
-    vi.spyOn(window, 'requestAnimationFrame').mockImplementation((cb) => setTimeout(cb, 16) as any);
+    vi.spyOn(window, 'requestAnimationFrame').mockImplementation((cb) => setTimeout(cb, 16) as unknown as number);
     vi.spyOn(window, 'cancelAnimationFrame').mockImplementation(clearTimeout);
     vi.spyOn(window, 'addEventListener');
     vi.spyOn(window, 'removeEventListener');
@@ -42,9 +42,9 @@ describe('ParticleBackground', () => {
 
   it('handles window resize', () => {
     render(<ParticleBackground />);
-    const resizeListener = (window.addEventListener as any).mock.calls.find(
-      (call: any[]) => call[0] === 'resize'
-    )[1];
+    const resizeListener = (window.addEventListener as import("vitest").Mock).mock.calls.find(
+      (call: unknown[]) => call[0] === 'resize'
+    )![1];
     
     act(() => {
       window.innerWidth = 1024;

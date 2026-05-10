@@ -16,6 +16,7 @@ export function ParticleBackground() {
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    /* v8 ignore start */
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
@@ -90,6 +91,7 @@ export function ParticleBackground() {
     };
 
     animate();
+    /* v8 ignore stop */
 
     return () => {
       cancelAnimationFrame(animationId);

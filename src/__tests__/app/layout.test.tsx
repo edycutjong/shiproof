@@ -10,6 +10,13 @@ vi.mock('next/font/google', () => ({
 
 describe('RootLayout', () => {
   it('renders correctly', () => {
+    const originalError = console.error;
+    console.error = (...args) => {
+      const msg = args.join(' ');
+      if (msg.includes('cannot be a child of <div>')) return;
+      originalError.call(console, ...args);
+    };
+
     const { container } = render(
       <RootLayout>
         <div data-testid="child">Test Content</div>
@@ -18,5 +25,7 @@ describe('RootLayout', () => {
     expect(container.querySelector('html')).toBeDefined();
     expect(container.querySelector('body')).toBeDefined();
     expect(container.querySelector('[data-testid="child"]')).toBeDefined();
+
+    console.error = originalError;
   });
 });

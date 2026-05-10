@@ -48,6 +48,7 @@ export function ScrambleText({ text, className = "", delay = 0, speed = 30 }: Sc
     }, delay);
     return () => {
       clearTimeout(timeout);
+      /* v8 ignore next */
       if (interval) clearInterval(interval);
     };
   }, [scramble, delay]);

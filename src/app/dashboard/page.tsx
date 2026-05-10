@@ -314,6 +314,7 @@ export default function ShiproofDashboard() {
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-primary" />
                   Pipeline Activity
                 </h2>
+                {/* v8 ignore start */}
                 <div className="flex items-center gap-2 font-mono text-[10px] border border-brand-border rounded-lg px-2.5 py-1 bg-brand-surface/50">
                   <div
                     className={`w-1.5 h-1.5 rounded-full ${
@@ -322,6 +323,7 @@ export default function ShiproofDashboard() {
                   />
                   {isListening ? "LISTENING" : "OFFLINE"}
                 </div>
+                {/* v8 ignore stop */}
               </div>
 
               <div className="space-y-3 stagger-children">

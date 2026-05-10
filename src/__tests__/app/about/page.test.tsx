@@ -12,7 +12,7 @@ vi.mock('@/components/ScrambleText', () => ({
 
 describe('AboutPage', () => {
   it('renders about page correctly', () => {
-    const { container } = render(<AboutPage />);
+    render(<AboutPage />);
     expect(screen.getByTestId('particle-bg')).toBeDefined();
     expect(screen.getAllByTestId('scramble-text').length).toBe(2);
     expect(screen.getByText('Back to Dashboard')).toBeDefined();
